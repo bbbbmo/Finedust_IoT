@@ -23,7 +23,7 @@ const Location = () => {
     const fetchLocation = async () => {
       try {
         const res = await fetch(
-          `/data/2.5/weather?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}&lang=${weather.lang}&units=${weather.units}`
+          `http://api.openweathermap.org/data/2.5/weather?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}&lang=${weather.lang}&units=${weather.units}`
         );
         const data = await res.json();
         console.log(data);

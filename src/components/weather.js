@@ -105,7 +105,7 @@ export default function Weather() {
     const fetchWeather = async () => {
       try {
         const res = await fetch(
-          `/data/2.5/weather?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}&lang=${weather.lang}&units=${weather.units}`
+          `http://api.openweathermap.org/data/2.5/weather?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}&lang=${weather.lang}&units=${weather.units}`
         );
         const data = await res.json();
         setTemp(data.main.temp);
@@ -121,7 +121,7 @@ export default function Weather() {
     const fetchAir = async () => {
       try {
         const res = await fetch(
-          `/data/2.5/air_pollution?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}`
+          `http://api.openweathermap.org/data/2.5/air_pollution?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}`
         );
         const data = await res.json();
         changePollutionIcon(data.list[0].components.pm10); // pm10의 데이

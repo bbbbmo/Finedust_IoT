@@ -74,7 +74,7 @@ export default function OutdoorAir() {
     const fetchAir = async () => {
       try {
         const res = await fetch(
-          `/data/2.5/air_pollution?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}`
+          `http://api.openweathermap.org/data/2.5/air_pollution?lat=${weather.lat}&lon=${weather.lon}&appid=${weather.api}`
         );
         const data = await res.json();
         setCo(data.list[0].components.co);
